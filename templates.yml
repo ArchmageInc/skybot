@@ -1,0 +1,218 @@
+beat:
+  mentions:
+    - "{{author}} gives {{mentions}} a beating."
+  single:
+    - "{{author}} gives a beating."
+blush:
+  mentions:
+    - "{{author}} blushes for {{mentions}}."
+  single:
+    - "{{author}} blushes."
+bow:
+  mentions:
+    - "{{author}} bows to {{mentions}}."
+  single:
+    - "{{author}} bows."
+calm:
+  mentions:
+    - "{{author}} helps {{mentions}} to calm themself."
+  single:
+    - "{{author}} calms themselves."
+cheer:
+  mentions:
+    - "{{author}} cheers for {{mentions}}!"
+  single:
+    - "{{author}} cheers!"
+clap:
+  mentions:
+    - "{{author}} claps for {{mentions}}."
+  single:
+    - "{{author}} claps."
+confetti:
+  mentions:
+    - "{{author}} shoots confetti for {{mentions}}."
+  single:
+    - "{{author}} shoots confetti."
+crabwalk:
+  mentions:
+    - "{{author}} crab walks with {{mentions}}."
+  single:
+    - "{{author}} does the crab walk."
+cry:
+  mentions:
+    - "{{author}} cries about {{mentions}}."
+    - "{{author}} cries for {{mentions}}."
+  single:
+    - "{{author}} cries."
+dance:
+  mentions:
+    - "{{author}} dances with {{mentions}}."
+  single:
+    - "{{author}} dances."
+divebomb:
+  mentions:
+    - "{{author}} divebombs {{mentions}}."
+    - "{{mentions}} is divebombed by {{author}}."
+  single:
+    - "{{author}} divebombs."
+fistbump:
+  mentions:
+    - "{{author}} gives {{mentions}} a fistbumb."
+    - "{{author}} fistbumbs {{mentions}}."
+  single:
+    - "{{author}} gives a fistbump."
+flip:
+  mentions:
+    - "{{author}} does a flip for {{mentions}}."
+  single:
+    - "{{author}} does a flip."
+friend:
+  mentions:
+    - "{{author}} befriends {{mentions}}."
+  single:
+    - "{{author}} is friendly."
+handstand:
+  mentions:
+    - "{{author}} does a handstand with {{mentions}}."
+  single:
+    - "{{author}} does a handstand."
+highfive:
+  mentions:
+    - "{{author}} gives {{mentions}} a highfive."
+  single:
+    - "{{author}} give a highfive."
+hug:
+  mentions:
+    - "{{author}} gives {{mentions}} a hug."
+  single:
+    - "{{author}} gives a hug."
+juggle:
+  mentions:
+    - "{{author}} juggles for {{mentions}}."
+  single:
+    - "{{author}} juggles."
+    - "{{author}} does a juggling act."
+kill:
+  mentions:
+    - "{{author}} kills {{mentions}}!"
+    - "{{mentions}} was just killed by {{author}}!"
+  single:
+    - "{{author}} was killed."
+    - "{{author}} killed themselves."
+kiss:
+  mentions:
+    - "{{author}} kisses {{mentions}}."
+    - "{{author}} gives {{mentions}} a kiss."
+  single:
+    - "{{author}} gives a kiss."
+ko:
+  mentions:
+    - "{{author}} knocks {{mentions}} out!"
+    - "{{mentions}} was knocked out by {{author}}!"
+  single:
+    - "{{author}} knocks themselves out!"
+krill:
+  mentions:
+    - "{{mentions}} just got krilled. OUCH!"
+    - "The krill attacks {{mentions}}."
+    - "{{mentions}} was smeared by the krill!"
+    - "Krill obliterates {{mentions}}!"
+  single:
+    - "{{author}} just got krilled. OUCH!"
+laugh:
+  mentions:
+    - "{{author}} laughs at {{mentions}}."
+  single:
+    - "{{author}} laughs."
+launch:
+  mentions:
+    - "{{author}} launches {{mentions}}. So long!"
+    - "{{mentions}} was launched by {{author}}. See ya!"
+  single:
+    - "{{author}} launches themselves."
+look:
+  mentions:
+    - "{{author}} looks for {{mentions}}."
+  single:
+    - "{{author}} looks around."
+love:
+  mentions:
+    - "{{author}} sends love to {{mention}}."
+  single:
+    - "{{author}} loves it."
+"no":
+  mentions:
+    - "{{author}} tells {{mention}} no."
+  single:
+    - "{{author}} says no!"
+pat:
+  mentions:
+    - "{{author}} gives {{mention}} a pat."
+  single:
+    - "{{author}} gives a pat."
+party:
+  mentions:
+    - "{{author}} parties with {{mentions}}."
+  single:
+    - "{{author}} declares party time!"
+piggyback:
+  mentions:
+    - "{{author}} rides piggyback with {{mentions}}."
+  single:
+    - "{{author}} rides piggyback."
+point:
+  mentions:
+    - "{{author}} points to {{mentions}}."
+    - "{{author}} points at {{mentions}}."
+  single:
+    - "{{author}} points."
+ponder:
+  single:
+    - "{{author}} ponders."
+    - "{{author}} thinks about that one."
+pout:
+  single:
+    - "{{author}} pouts."
+question:
+  mentions:
+    - "{{author}} is confused by {{mention}}."
+  single:
+    - "{{author}} is confused."
+roast:
+  mentions:
+    - "{{author}} roasts {{mention}}."
+    - "{{mention}} is roasted by {{author}}."
+    - "{{author}} burns {{mention}}. You'd better get some ice for that."
+  single:
+    - "{{author}} roasts themselves."
+  aliases:
+    - "burn"
+salute:
+  mentions:
+    - "{{author}} salutes {{mention}}."
+  single:
+    - "{{author}} salutes."
+sleep:
+  single:
+    - "{{author}} is sleepy."
+soar:
+  mentions:
+    - "{{author}} soars with {{mentions}}."
+  single:
+    - "{{author}} soars."
+stomp:
+  mentions:
+    - "{{author}} stomps at {{mention}}."
+  single:
+    - "{{author}} stomps."
+surprised:
+  mentions:
+    - "{{author}} is surprised by {{mention}}."
+  single:
+    - "{{author}} is surprised."
+wave:
+  mentions:
+    - "{{author}} waves to {{mention}}."
+    - "{{author}} waves at {{mention}}."
+  single:
+    - "{{author}} waves."
