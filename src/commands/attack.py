@@ -1,8 +1,8 @@
-from commands import Command
-from utils.BattleManager import BattleManager
+from .command import Command
+from utils.battlemanager import BattleManager
 
 class Attack(Command):
-
+  command_type = 'Attack'
   defense = None
 
   def __init__(self, command, config):

@@ -1,5 +1,5 @@
 import yaml
-from commands import Attack, Defense, Command
+from commands import Attack, Defense, Command, Emote, Help
 from os.path import join, isfile
 from os import listdir
 
@@ -13,16 +13,22 @@ class CommandInitializer():
   _emote_templates = './templates/emotes.yml'
   _defense_templates = './templates/defenses.yml'
 
-  def __init__(self):
+  bot_client = None
+
+  def __init__(self, bot_client):
+
+    self.bot_client = bot_client
 
     gif_counts = self.scan_gifs()
     attack_commands = self.load_attacks(gif_counts)
     defense_commands = self.load_defenses(gif_counts)
     emote_commands = self.load_emotes(gif_counts)
+    special_commands = self.load_special()
 
     self.commands.update(attack_commands)
     self.commands.update(defense_commands)
     self.commands.update(emote_commands)
+    self.commands.update(special_commands)
 
   def scan_gifs(self):
     files = [f for f in listdir(f'{self._gif_directory}') if isfile(join(f'{self._gif_directory}/', f))]
@@ -36,6 +42,12 @@ class CommandInitializer():
         gifs[command] = gifs[command] + 1
         
     return gifs
+
+  def load_special(self):
+    commands = {
+      "help": Help(self.bot_client)
+    }
+    return commands
 
   def load_attacks(self, gif_counts):
     templates = self.load_template(self._attack_templates)
@@ -70,7 +82,7 @@ class CommandInitializer():
     for command_name in templates:
       template = templates[command_name]
       config = self.standard_config(command_name, template, gif_counts)
-      commands[command_name] = Command(command_name, config)
+      commands[command_name] = Emote(command_name, config)
       commands.update(self.create_aliases(Command, template, config))
     return commands
 

@@ -11,5 +11,5 @@ RUN apk add --no-cache --virtual .build-deps gcc musl-dev \
 
 COPY ./src/* ./
 
-#docker run -d -v sky_gifs:/usr/src/app/gifs --name=skybot archmageinc/skybot
+#docker run -d -v sky_gifs:/usr/src/gifs --name=skybot archmageinc/skybot
 CMD [ "python", "-u", "skybot.py" ]

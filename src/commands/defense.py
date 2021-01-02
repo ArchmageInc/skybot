@@ -1,9 +1,10 @@
 import random
 import discord
-from commands import Command
-from utils.BattleManager import BattleManager
+from .command import Command
+from utils.battlemanager import BattleManager
 
 class Defense(Command):
+  command_type = 'Defense'
   def __init__(self, command, config):
     super().__init__(command, config)
 

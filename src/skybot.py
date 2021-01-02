@@ -14,23 +14,30 @@ TOKEN = getenv('DISCORD_TOKEN')
 client = discord.Client()
 
 class SkyClient(discord.Client):
+    __instance = None
     active_attacks = {}
     commands = {}
     command_parser = None
     
+    @staticmethod
+    def get_instance():
+      return SkyClient.__instance
+
     def __init__(self):
+      if SkyClient.__instance is not None:
+        raise Exception("Instantating an already instantiated singleton!")
+      SkyClient.__instance = self
       super().__init__()
       
       self.guild_id = getenv('GUILD_ID')
       self.contributor_role_id = getenv('CONTRIBUTOR_ROLE_ID')
 
-      commandInitializer = CommandInitializer()
-      #self.gif_counts = commandInitializer.gif_counts
+      commandInitializer = CommandInitializer(self)
       self.commands = commandInitializer.commands
       self.command_parser = CommandParser(self)
 
-      #print(f'Started with the following commands: {self.commands}')
       print(f'SkyBot activated with {len(self.commands)} commands')
+      
 
     async def stop(self):
       print(f'{self.user} is disconnecting from Discord')

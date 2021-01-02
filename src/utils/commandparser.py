@@ -1,5 +1,5 @@
 import re
-from utils.BattleManager import BattleManager
+from utils.battlemanager import BattleManager
 
 class CommandParser():
   bot_client = None
@@ -27,7 +27,7 @@ class CommandParser():
 
   def special_command(self, command_name, message):
     if command_name in self.special_commands:
-      return command_name
+      return self.bot_client.commands[command_name]
 
     if re.search('what can you do', message.content, re.I):
       return 'help'

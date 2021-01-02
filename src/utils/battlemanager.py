@@ -1,5 +1,4 @@
 import asyncio
-from commands import Attack
 from datetime import datetime
 
 class BattleManager():
@@ -27,7 +26,7 @@ class BattleManager():
     bot_client.loop.create_task(self.manage_active_attacks())
 
   async def setup_listener(self, command, attacker, targets, watch_message):
-    if not isinstance(command, Attack.Attack):
+    if not command.command_type == 'Attack':
       return
     if len(targets) <= 0:
       return
@@ -43,6 +42,8 @@ class BattleManager():
     await watch_message.add_reaction(self.icons['wait'])
 
   async def win_battle(self, id):
+    if id not in self.active_attacks:
+      return
     await self.active_attacks[id]['message'].clear_reaction(self.icons['wait'])
     await self.active_attacks[id]['message'].add_reaction(self.icons['win_battle'])
     del self.active_attacks[id]

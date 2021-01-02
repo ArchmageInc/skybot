@@ -2,6 +2,8 @@ import random
 import discord
 
 class Command():
+  _gif_directory = '../gifs'
+  command_type = 'Default'
   bot_client = None
   command = None
   prefix = None
@@ -19,7 +21,7 @@ class Command():
   def compile_gifs(self, config):
     file_names = []
     for i in range(config['gifs']):
-      file_names.append(f'../gifs/{self.prefix}_{i}.gif')
+      file_names.append(f'{self._gif_directory}/{self.prefix}_{i}.gif')
     return file_names
 
   def compile_mention_templates(self, config):
@@ -65,7 +67,7 @@ class Command():
   def get_image(self, message):
     message_parts = message.content.lower().split()
     try:
-      img_name = f'../gifs/{self.prefix}_{int(message_parts[len(message_parts)-1])}.gif'
+      img_name = f'{self._gif_directory}/{self.prefix}_{int(message_parts[len(message_parts)-1])}.gif'
     except ValueError:
       img_name = random.choice(self.gif_files)
 
