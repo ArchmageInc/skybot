@@ -1,0 +1,260 @@
+beat:
+  mentions:
+    - "{{author}} gives {{mentions}} a beating."
+  single:
+    - "{{author}} gives a beating."
+  type: attack
+blush:
+  mentions:
+    - "{{author}} blushes for {{mentions}}."
+  single:
+    - "{{author}} blushes."
+  type: react
+bow:
+  mentions:
+    - "{{author}} bows to {{mentions}}."
+  single:
+    - "{{author}} bows."
+  type: react
+calm:
+  mentions:
+    - "{{author}} helps {{mentions}} to calm themself."
+  single:
+    - "{{author}} calms themselves."
+  type: react
+cheer:
+  mentions:
+    - "{{author}} cheers for {{mentions}}!"
+  single:
+    - "{{author}} cheers!"
+  type: react
+clap:
+  mentions:
+    - "{{author}} claps for {{mentions}}."
+  single:
+    - "{{author}} claps."
+  type: react
+confetti:
+  mentions:
+    - "{{author}} shoots confetti for {{mentions}}."
+  single:
+    - "{{author}} shoots confetti."
+  type: react
+crabwalk:
+  mentions:
+    - "{{author}} crab walks with {{mentions}}."
+  single:
+    - "{{author}} does the crab walk."
+  type: react
+cry:
+  mentions:
+    - "{{author}} cries about {{mentions}}."
+    - "{{author}} cries for {{mentions}}."
+  single:
+    - "{{author}} cries."
+  type: react
+dance:
+  mentions:
+    - "{{author}} dances with {{mentions}}."
+  single:
+    - "{{author}} dances."
+  type: react
+divebomb:
+  mentions:
+    - "{{author}} divebombs {{mentions}}."
+    - "{{mentions}} is divebombed by {{author}}."
+  single:
+    - "{{author}} divebombs."
+  type: attack
+fistbump:
+  mentions:
+    - "{{author}} gives {{mentions}} a fistbumb."
+    - "{{author}} fistbumbs {{mentions}}."
+  single:
+    - "{{author}} gives a fistbump."
+  type: react
+flip:
+  mentions:
+    - "{{author}} does a flip for {{mentions}}."
+  single:
+    - "{{author}} does a flip."
+  type: react
+friend:
+  mentions:
+    - "{{author}} befriends {{mentions}}."
+  single:
+    - "{{author}} is friendly."
+  type: react
+handstand:
+  mentions:
+    - "{{author}} does a handstand with {{mentions}}."
+  single:
+    - "{{author}} does a handstand."
+  type: react
+highfive:
+  mentions:
+    - "{{author}} gives {{mentions}} a highfive."
+  single:
+    - "{{author}} gives a highfive."
+  type: react
+hug:
+  mentions:
+    - "{{author}} gives {{mentions}} a hug."
+  single:
+    - "{{author}} gives a hug."
+  type: react
+juggle:
+  mentions:
+    - "{{author}} juggles for {{mentions}}."
+  single:
+    - "{{author}} juggles."
+    - "{{author}} does a juggling act."
+  type: react
+kill:
+  mentions:
+    - "{{author}} kills {{mentions}}!"
+    - "{{mentions}} was just killed by {{author}}!"
+  single:
+    - "{{author}} was killed."
+    - "{{author}} killed themselves."
+  type: attack
+kiss:
+  mentions:
+    - "{{author}} kisses {{mentions}}."
+    - "{{author}} gives {{mentions}} a kiss."
+  single:
+    - "{{author}} gives a kiss."
+  type: react
+ko:
+  mentions:
+    - "{{author}} knocks {{mentions}} out!"
+    - "{{mentions}} was knocked out by {{author}}!"
+  single:
+    - "{{author}} knocks themselves out!"
+  type: attack
+krill:
+  mentions:
+    - "{{mentions}} just got krilled. OUCH!"
+    - "The krill attacks {{mentions}}."
+    - "{{mentions}} was smeared by the krill!"
+    - "Krill obliterates {{mentions}}!"
+  single:
+    - "{{author}} just got krilled. OUCH!"
+  type: attack
+  defense: krillmiss
+laugh:
+  mentions:
+    - "{{author}} laughs at {{mentions}}."
+  single:
+    - "{{author}} laughs."
+  type: react
+launch:
+  mentions:
+    - "{{author}} launches {{mentions}}. So long!"
+    - "{{mentions}} was launched by {{author}}. See ya!"
+  single:
+    - "{{author}} launches themselves."
+  type: attack
+look:
+  mentions:
+    - "{{author}} looks for {{mentions}}."
+  single:
+    - "{{author}} looks around."
+  type: react
+love:
+  mentions:
+    - "{{author}} sends love to {{mention}}."
+  single:
+    - "{{author}} loves it."
+  type: react
+"no":
+  mentions:
+    - "{{author}} tells {{mention}} no."
+  single:
+    - "{{author}} says no!"
+  type: react
+pat:
+  mentions:
+    - "{{author}} gives {{mention}} a pat."
+  single:
+    - "{{author}} gives a pat."
+  type: react
+party:
+  mentions:
+    - "{{author}} parties with {{mentions}}."
+  single:
+    - "{{author}} declares party time!"
+  type: react
+piggyback:
+  mentions:
+    - "{{author}} rides piggyback with {{mentions}}."
+  single:
+    - "{{author}} rides piggyback."
+  type: react
+point:
+  mentions:
+    - "{{author}} points to {{mentions}}."
+    - "{{author}} points at {{mentions}}."
+  single:
+    - "{{author}} points."
+  type: react
+ponder:
+  single:
+    - "{{author}} ponders."
+    - "{{author}} thinks about that one."
+  type: react
+pout:
+  single:
+    - "{{author}} pouts."
+  type: react
+question:
+  mentions:
+    - "{{author}} is confused by {{mention}}."
+  single:
+    - "{{author}} is confused."
+  type: react
+roast:
+  mentions:
+    - "{{author}} roasts {{mention}}."
+    - "{{mention}} is roasted by {{author}}."
+    - "{{author}} burns {{mention}}. You'd better get some ice for that."
+  single:
+    - "{{author}} roasts themselves."
+  type: attack
+  aliases:
+    - "burn"
+salute:
+  mentions:
+    - "{{author}} salutes {{mention}}."
+  single:
+    - "{{author}} salutes."
+  type: react
+sleep:
+  single:
+    - "{{author}} is sleepy."
+  type: react
+soar:
+  mentions:
+    - "{{author}} soars with {{mentions}}."
+  single:
+    - "{{author}} soars."
+  type: react
+stomp:
+  mentions:
+    - "{{author}} stomps at {{mention}}."
+  single:
+    - "{{author}} stomps."
+  type: react
+surprised:
+  mentions:
+    - "{{author}} is surprised by {{mention}}."
+  single:
+    - "{{author}} is surprised."
+  type: react
+wave:
+  mentions:
+    - "{{author}} waves to {{mention}}."
+    - "{{author}} waves at {{mention}}."
+  single:
+    - "{{author}} waves."
+  type: react

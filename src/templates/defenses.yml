@@ -1,0 +1,6 @@
+krillmiss:
+  mentions:
+    - "{{targets}} were able to dodge the krill sent by {{attacker}}."
+    - "{{target}} helped {{targets}} dodge the krill sent by {{attacker}}"
+  single:
+    - "{{target}} was able to dodge the krill sent by {{attacker}}."
