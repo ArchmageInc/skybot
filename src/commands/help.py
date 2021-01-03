@@ -1,6 +1,7 @@
 from . import Command, Attack, Defense, Emote
 
 class Help(Command):
+  command_type = 'Special'
   bot_client = None
   __help_message = None
 
