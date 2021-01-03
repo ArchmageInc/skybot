@@ -1,4 +1,5 @@
 import asyncio
+import discord
 from datetime import datetime
 
 class BattleManager():
@@ -44,16 +45,23 @@ class BattleManager():
   async def win_battle(self, id):
     if id not in self.active_attacks:
       return
-    await self.active_attacks[id]['message'].clear_reaction(self.icons['wait'])
-    await self.active_attacks[id]['message'].add_reaction(self.icons['win_battle'])
-    del self.active_attacks[id]
+    try:
+      await self.active_attacks[id]['message'].clear_reaction(self.icons['wait'])
+      await self.active_attacks[id]['message'].add_reaction(self.icons['win_battle'])
+    except (discord.HTTPException, discord.NotFound):
+      print('Tried to update winning battle message, but it was deleted.')
+    finally:
+      del self.active_attacks[id]
 
   async def defend_battle(self, id):
     if id not in self.active_attacks:
       return
-
-    await self.active_attacks[id]['message'].delete()
-    del self.active_attacks[id]
+    try:
+      await self.active_attacks[id]['message'].delete()
+    except (discord.HTTPException, discord.NotFound):
+      print('Tried to remove a defended attack, but it was already gone.')
+    finally:
+      del self.active_attacks[id]
 
   async def manage_active_attacks(self):
     while True:
@@ -87,9 +95,13 @@ class BattleManager():
 
     is_by_target = user in active_attack['targets']
     if not is_by_target:
-      await message.remove_reaction(reaction, user)
-      await message.channel.send(f'{user.mention}, you cannot defend against an attack of which you are not a target.', delete_after=10)
-      return
+      try:
+        await message.remove_reaction(reaction, user)
+      except (discord.HTTPException, discord.NotFound):
+        print('Tried to remove an invalid reaction from an attack message, but it was deleted')
+      finally:  
+        await message.channel.send(f'{user.mention}, you cannot defend against an attack of which you are not a target.', delete_after=10)
+        return
 
     attacker = active_attack['attacker']
     command = active_attack['command']
