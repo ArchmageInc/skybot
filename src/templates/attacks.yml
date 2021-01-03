@@ -1,0 +1,48 @@
+beat:
+  mentions:
+    - "{{author}} gives {{mentions}} a beating."
+  single:
+    - "{{author}} gives a beating."
+kill:
+  mentions:
+    - "{{author}} kills {{mentions}}!"
+    - "{{mentions}} was just killed by {{author}}!"
+  single:
+    - "{{author}} was killed."
+    - "{{author}} killed themselves."
+ko:
+  mentions:
+    - "{{author}} knocks {{mentions}} out!"
+    - "{{mentions}} was knocked out by {{author}}!"
+  single:
+    - "{{author}} knocks themselves out!"
+krill:
+  mentions:
+    - "{{mentions}} just got krilled by {{author}}. OUCH!"
+    - "The krill attacks {{mentions}}. Thanks to {{author}}."
+    - "{{mentions}} was smeared by the krill! {{author}} enjoys it."
+    - "{{author}} sends the krill to obliterate {{mentions}}!"
+  single:
+    - "{{author}} just got krilled. OUCH!"
+  defense: krillmiss
+launch:
+  mentions:
+    - "{{author}} launches {{mentions}}. So long!"
+    - "{{mentions}} was launched by {{author}}. See ya!"
+  single:
+    - "{{author}} launches themselves."
+roast:
+  mentions:
+    - "{{author}} roasts {{mention}}."
+    - "{{mention}} is roasted by {{author}}."
+    - "{{author}} burns {{mention}}. You'd better get some ice for that."
+  single:
+    - "{{author}} roasts themselves."
+  aliases:
+    - "burn"
+divebomb:
+  mentions:
+    - "{{author}} divebombs {{mentions}}."
+    - "{{mentions}} is divebombed by {{author}}."
+  single:
+    - "{{author}} divebombs."
