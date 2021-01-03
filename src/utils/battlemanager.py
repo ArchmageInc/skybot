@@ -101,7 +101,7 @@ class BattleManager():
         print('Tried to remove an invalid reaction from an attack message, but it was deleted')
       finally:  
         await message.channel.send(f'{user.mention}, you cannot defend against an attack of which you are not a target.', delete_after=10)
-      
+        return
 
     attacker = active_attack['attacker']
     command = active_attack['command']
