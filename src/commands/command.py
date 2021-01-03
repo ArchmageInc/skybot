@@ -49,6 +49,9 @@ class Command():
 
   def create_mention_list(self, mentions):
     str = ''
+    if len(mentions) == 1:
+      return f'{mentions[0].mention}'
+      
     for m in mentions:
       if mentions.index(m) < (len(mentions)-1):
         str = str + f'{m.mention}, '
