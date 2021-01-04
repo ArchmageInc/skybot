@@ -3,3 +3,4 @@ from .command import Command
 from .defense import Defense
 from .emote import Emote
 from .help import Help
+from .precursor import Precursor

@@ -11,7 +11,8 @@ class Command():
   mention_response_templates = []
   single_response_templates = []
 
-  def __init__(self, command, config):
+  def __init__(self, command, config, bot_client):
+    self.bot_client = bot_client
     self.command = command
     self.prefix = config['prefix']
     self.gif_files = self.compile_gifs(config)
@@ -36,14 +37,14 @@ class Command():
       templates.append(template)
     return templates
 
-  def parse_template(self, template, message):
-    output = template.replace('{{author}}', message.author.mention)
+  def parse_template(self, template, author, mentions):
+    output = template.replace('{{author}}', author.mention)
 
-    if len(message.mentions) == 1:
-      output = output.replace('{{mention}}', message.mentions[0].mention).replace('{{mentions}}', message.mentions[0].mention)
+    if len(mentions) == 1:
+      output = output.replace('{{mention}}', mentions[0].mention).replace('{{mentions}}', mentions[0].mention)
     
-    if len(message.mentions) > 1:
-      output = output.replace('{{mention}}', message.mentions[0].mention).replace('{{mentions}}', self.create_mention_list(message.mentions))
+    if len(mentions) > 1:
+      output = output.replace('{{mention}}', mentions[0].mention).replace('{{mentions}}', self.create_mention_list(mentions))
     
     return output
 
@@ -62,13 +63,16 @@ class Command():
   async def send_invalid_gif(self, message):
     await message.channel.send(f'{message.author.mention} You\'ve specified an invalid gif.')
 
-  def get_title(self, message):
-    if len(message.mentions) > 0:
-      return self.parse_template(random.choice(self.mention_response_templates), message)
-    return self.parse_template(random.choice(self.single_response_templates), message)
+  def get_title(self, author, mentions=[]):
+    if len(mentions) > 0:
+      return self.parse_template(random.choice(self.mention_response_templates), author, mentions)
+    return self.parse_template(random.choice(self.single_response_templates), author, mentions)
 
-  def get_image(self, message):
-    message_parts = message.content.lower().split()
+  def get_image(self, message=None):
+    if message is not None:
+      message_parts = message.content.lower().split()
+    else:
+      message_parts = []
     try:
       img_name = f'{self._gif_directory}/{self.prefix}_{int(message_parts[len(message_parts)-1])}.gif'
     except ValueError:
@@ -86,7 +90,7 @@ class Command():
       await self.send_invalid_gif(message)
       return
 
-    title = self.get_title(message)
+    title = self.get_title(message.author, message.mentions)
     await message.delete()
     new_message = await message.channel.send(title, file=discord.File(f'{img_name}'))
     return new_message

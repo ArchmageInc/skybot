@@ -5,8 +5,8 @@ from utils.battlemanager import BattleManager
 
 class Defense(Command):
   command_type = 'Defense'
-  def __init__(self, command, config):
-    super().__init__(command, config)
+  def __init__(self, command, config, bot_client):
+    super().__init__(command, config, bot_client)
 
   async def run_command(self, message, author, attacker, targets=[]):
     if len(targets) > 0 and len(self.mention_response_templates) > 0:

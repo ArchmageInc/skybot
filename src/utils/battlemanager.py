@@ -46,8 +46,21 @@ class BattleManager():
     if id not in self.active_attacks:
       return
     try:
-      await self.active_attacks[id]['message'].clear_reaction(self.icons['wait'])
-      await self.active_attacks[id]['message'].add_reaction(self.icons['win_battle'])
+      attack_command = self.active_attacks[id]['command']
+      message = self.active_attacks[id]['message']
+      if attack_command.precursor is not None:
+        #The attack command has a precursor, so we need to remove the precursor image and add the new one
+        author = self.active_attacks[id]['attacker']
+        mentions = self.active_attacks[id]['targets']
+        image_name = attack_command.get_image()
+        title = attack_command.get_title(author, mentions)
+        await message.delete()
+        new_message = await message.channel.send(title, file=discord.File(f'{image_name}'))
+        await new_mssage.add_reaction(self.icons['win_battle'])
+      else:
+        #The attack command did not have a precursor, so we just remove the waiting reaction and add the winner reaction
+        await self.active_attacks[id]['message'].clear_reaction(self.icons['wait'])
+        await self.active_attacks[id]['message'].add_reaction(self.icons['win_battle'])
     except (discord.HTTPException, discord.NotFound):
       print('Tried to update winning battle message, but it was deleted.')
     finally:

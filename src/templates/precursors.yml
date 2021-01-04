@@ -1,0 +1,11 @@
+krillspot:
+  mentions:
+    - "The krill has spotted {{mentions}}."
+    - "{{mentions}} has been spotted by the Krill."
+angrycrab:
+  mentions:
+    - "A crab has become angry at {{mentions}}."
+    - "{{mentions}} got too close to a crab."
+prelaunch:
+  mentions:
+    - "{{mentions}} is about to be launched."
